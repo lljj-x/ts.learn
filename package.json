@@ -12,7 +12,7 @@
     ],
     "config": {
         "commitizen": {
-            "path": "./node_modules/cz-conventional-changelog-emoji"
+            "path": "./node_modules/cz-conventional-changelog"
         }
     },
     "husky": {
@@ -26,7 +26,6 @@
         "commitizen": "^4.2.1",
         "conventional-changelog-cli": "^2.0.34",
         "cz-conventional-changelog": "^3.2.0",
-        "cz-conventional-changelog-emoji": "^0.1.0",
         "husky": "^4.2.5",
         "lerna": "^3.22.1"
     }
