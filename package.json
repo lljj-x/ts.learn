@@ -5,7 +5,8 @@
     "homepage": "https://github.com/lljj-x/ts.learn",
     "author": "Liu.Jun",
     "scripts": {
-        "vue:dev": "yarn workspace vue serve"
+        "vue:dev": "yarn workspace vue serve",
+        "clivue:dev": "yarn workspace clivue serve"
     },
     "workspaces": [
         "packages/*"
