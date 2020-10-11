@@ -1,9 +1,11 @@
 module.exports = {
     presets: [
         [
-            '@vue/cli-plugin-babel/preset',
+            '@lljj/babel-preset-app',
             {
-                // useBuiltIns: false
+                useBuiltIns: false,
+                regenerator: true,
+                helpers: true
             }
         ]
     ]
