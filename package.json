@@ -6,6 +6,7 @@
     "author": "Liu.Jun",
     "scripts": {
         "test:dev": "yarn workspace test serve",
+        "test:watch": "yarn workspace test watch",
         "test:build": "yarn workspace test build",
         "test:report": "yarn workspace test build --report",
         "vue:dev": "yarn workspace clivue serve",

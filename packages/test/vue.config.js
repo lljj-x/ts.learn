@@ -4,7 +4,7 @@
 
 module.exports = {
     chainWebpack: (config) => {
-        const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-        config.plugin('bundle-analyzer').use(BundleAnalyzerPlugin);
+        // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+        // config.plugin('bundle-analyzer').use(BundleAnalyzerPlugin);
     },
 };

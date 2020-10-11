@@ -1,7 +1,7 @@
-import './a.ts';
-import './b.ts';
+import './test.js';
+import './baseType.ts';
 
-class A {
+export default class A {
     static c = '11';
 
     constructor(public a: string, public b: string) {
@@ -10,14 +10,10 @@ class A {
 
     init() {
         console.log('ok');
-        this.asyncFn().then(() => {
-            console.log('async');
-        });
+        this.asyncFn();
     }
 
     async asyncFn() {
-        console.log('asymc');
+        console.log('async');
     }
 }
-
-new A('a', 'b');
