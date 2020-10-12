@@ -1,5 +1,4 @@
-import './test.js';
-import './baseType.ts';
+import './advanceType';
 
 export default class A {
     static c = '11';

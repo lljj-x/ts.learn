@@ -1,3 +1,4 @@
+
 // base type
 
 {
@@ -124,5 +125,92 @@
 
         return '';
     }
-    console.log(reverse);
+    console.log(reverse(1));
+}
+
+{
+    // 类型断言 as
+
+    // 联合类型断言
+    interface Cat {
+        name: string;
+        run(): void;
+    }
+
+    interface Fish {
+        name: string;
+        swim(): void;
+    }
+
+    function isFish(animal: Cat | Fish) {
+        // as 断言类型
+        return typeof (animal as Fish).swim === 'function';
+    }
+
+    isFish({
+        name: 'xx',
+        swim() {
+            console.log('swim ....');
+        }
+    });
+
+    //  父类断言为更加具体的子类
+    class ApiError extends Error {
+         code = 0;
+    }
+
+    class HttpError extends Error {
+        statusCode = 200;
+    }
+
+    function isApiError(error: Error) {
+        return error instanceof ApiError;
+        // return typeof (error as ApiError).code === 'number';
+    }
+
+    isApiError({ message: '', name: '', stack: '' });
+
+    // interface
+    interface ApiErrorInterface extends Error {
+        code: number;
+    }
+    interface HttpErrorInterface extends Error {
+        statusCode: number;
+    }
+
+    function iIsApiError(error: Error) {
+        return typeof (error as ApiErrorInterface).code === 'number';
+    }
+
+    iIsApiError({ message: '', name: '', stack: '' });
+
+
+    // 任何一个类型断言为 any
+    (window as any).foo = 1;
+
+    // any 断言为一个具体的类型
+    function getCacheData(key: string): any {
+        return (window as any).cache[key];
+    }
+
+    interface Cat {
+        name: string;
+        run(): void;
+    }
+
+    const tom = getCacheData('tom') as Cat;
+    tom.run();
+
+
+    // 双重断言 - 借助 中间any来as任何类型
+    interface Cat {
+        run(): void;
+    }
+    interface Fish {
+        swim(): void;
+    }
+
+    function testCat(cat: Cat) {
+        return (cat as any as Fish);
+    }
 }
